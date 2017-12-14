@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 乐享房产</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div style="background-color:red">@Html.ActionLink("乐享房产", "Index", "Home", null, new { @class = "navbar-brand" })</div>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav nav-pills" style="float:right">
+                    <li>@Html.ActionLink("首页", "Index", "Home")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            公寓<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("热门楼盘", "About", "Home")</li>
+                            <li>@Html.ActionLink("现房", "About", "Home")</li>
+                            <li>@Html.ActionLink("期房", "About", "Home")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            别墅<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("独栋别墅", "About", "Home")</li>
+                            <li>@Html.ActionLink("联排别墅", "About", "Home")</li>
+                            <li>@Html.ActionLink("豪华别墅", "About", "Home")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("地图找房", "Index", "Home")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-envelope"></span>房产资讯<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("常见问题", "About", "Home")</li>
+                            <li>@Html.ActionLink("房闻速递", "About", "Home")</li>
+                            <li>@Html.ActionLink("投资技巧", "About", "Home")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("泰国乐享", "Index", "Home")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            关于我们<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("联系我们", "About", "Home")</li>
+                            <li>@Html.ActionLink("乐享服务", "About", "Home")</li>
+                            <li>@Html.ActionLink("公团队介绍", "About", "Home")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year-@DateTime.Now.Month-@DateTime.Now.Day - 芭提雅乐享房产经纪有限公司</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
